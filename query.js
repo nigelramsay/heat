@@ -9,22 +9,22 @@ request('http://192.168.1.7/right.htm', function(error, response, body) {
     lines.forEach(function(line){
       var actualMatches = line.match(/<b>Actual.*font size='5'>(\d{1,2}\.\d)/);
       if(actualMatches != null){
-        actual = actualMatches[1];
+        actual = Number(actualMatches[1]);
       }
 
       var heatMatches = line.match(/<b>Heat Status.*font size='4'>(O[NF]{1,2})/);
       if(heatMatches != null){
-        heat = (heatMatches[1] == 'ON');
+        heat = (heatMatches[1] == 'ON') ? 1 : 0;
       }
 
       var setMatches = line.match(/<b>Set.*font size='4'>(\d{1,2})/);
       if(setMatches != null){
-        set = setMatches[1];
+        set = Number(setMatches[1]);
       }
     });
 
-    console.log("Actual: " + actual);
-    console.log("Heat: " + heat);
-    console.log("Set: " + set);
+    var now = new Date();
+    console.log("" + now.toISOString() + ", " + actual + ", " + set + ", " + heat);
+    // console.log({actual: actual, heat: heat, set: set});
   }
 });
