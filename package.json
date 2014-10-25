@@ -4,7 +4,9 @@
   "description": "",
   "main": "query.js",
   "dependencies": {
-    "request": "^2.44.0"
+    "request": "^2.44.0",
+    "pg": "^3.5.0",
+    "db-migrate": "^0.7.1"
   },
   "devDependencies": {},
   "scripts": {

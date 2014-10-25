@@ -1,0 +1,9 @@
+  {
+  "development": {
+    "driver": "pg",
+    "user": "nigelramsay",
+    "password": "",
+    "host": "localhost",
+    "database": "heat"
+  }
+}
