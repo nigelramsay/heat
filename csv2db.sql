@@ -9,8 +9,9 @@ var buffer = fs.readFile(process.argv[2], 'utf8', function(err, data){
       measurement.save(entries[0], 'set', entries[2], function(){
         measurement.save(entries[0], 'on', entries[3], function(){
           console.log(entries.join(', '));
-        })
-
+        });
+      });
+    });
   });
 });
 
